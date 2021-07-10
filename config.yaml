@@ -1,0 +1,24 @@
+# new city
+
+new_city_1br:
+  # initial conditions
+  home_value: 226789
+  down_payment_perc: 15
+  discount_perc: 3
+  service_fee_perc: 4
+  misc_fee_amount: 1500
+  # month-to-month payments
+  hoa: 160
+  utilities: 150
+  mortgage_insurance: 0
+  # loan terms
+  interest_perc: 10
+  target_payment_period_yrs: 15
+  min_morgage_payment: 1500
+  # investment qualities
+  forecast_growth_yr_perc: 3
+  rent_opportunity: 1800
+  additions_to_principal: # amount, month
+    - 50000, 6
+    - 10000, 18
+
