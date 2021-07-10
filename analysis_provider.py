@@ -60,6 +60,7 @@ def build_mortgage_investment_plan(config_dict):
         mortgage_payment = np.array(interest_payment) + np.array(principal_payment)
         property_name = [p]*len(mortgage_payment)
         rent_profit = curr_dict['rent_opportunity']-np.array(mortgage_payment)
+        equity = curr_dict['home_value']-np.array(remaining_principal)
 
     df =  pd.DataFrame({'months': months,
                         'principal_payment': principal_payment,
@@ -67,6 +68,7 @@ def build_mortgage_investment_plan(config_dict):
                         'interest_payment': interest_payment,
                         'mortgage_payment': mortgage_payment,
                         'property_name': property_name,
-                        'rent_profit':rent_profit}).fillna(0)
+                        'rent_profit':rent_profit,
+                        'equity': equity}) #.fillna(0)
 
     return df 

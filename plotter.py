@@ -6,7 +6,7 @@ def plot_monthly_installments(df):
     for p in df.property_name.unique():
         df_temp = df[df.property_name==p]
         
-        fig, ax1 = plt.subplots(figsize=(15, 10))
+        fig, ax1 = plt.subplots(figsize=(20, 10))
 
         colors = ['green', 'blue', 'orange', 'black']
         for idx, col in enumerate(['principal_payment', 'mortgage_payment', 'interest_payment', 'rent_profit']):
@@ -19,6 +19,7 @@ def plot_monthly_installments(df):
         ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 
         ax2.plot(df_temp.months, df_temp['remaining_principal'], label='remaining_principal', color='red')
+        ax2.plot(df_temp.months, df_temp['equity'], label='equity', color='red')
         ax2.tick_params(axis='y', labelcolor='tab:red')
         ax2.legend(bbox_to_anchor=(1.1,0.8), loc="upper left")
 
